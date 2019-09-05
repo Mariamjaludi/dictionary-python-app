@@ -7,6 +7,7 @@ data = json.load(open("data.json"))
 # returns a string (definition)
 def define(word):
     word = word.lower()
+
     if word in data:
         return '\n'.join(data[word])
     elif word.title() in data:
