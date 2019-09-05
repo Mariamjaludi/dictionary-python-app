@@ -8,12 +8,12 @@ data = json.load(open("data.json"))
 def define(word):
     word = word.lower()
     if word in data:
-        return ' '.join(data[word])
+        return '\n'.join(data[word])
     elif  get_close_matches(word, data.keys()):
         match = get_close_matches(word, data.keys())[0]
         reply = input("Did you mean %s? Enter Y if yes, or N if no" %match)
         if reply == "Y":
-            return ' '.join(data[match])
+            return '\n'.join(data[match])
         else:
             return "Word does not exist in dictionary. Please double check it."  
     else: 
