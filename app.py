@@ -9,6 +9,10 @@ def define(word):
     word = word.lower()
     if word in data:
         return '\n'.join(data[word])
+    elif word.title() in data:
+        return '\n'.join(data[word.title()])
+    elif word.upper() in data:
+        return '\n'.join(data[word.upper()])    
     elif  get_close_matches(word, data.keys()):
         match = get_close_matches(word, data.keys())[0]
         reply = input("Did you mean %s? Enter Y if yes, or N if no" %match)
